@@ -1,0 +1,75 @@
+<%
+  user ||= @user
+  wellKnowCharas = []
+  voteKnowCharas = []
+  selfKnowCharas = []
+  unknowCharas = []
+  
+  survey_result_array = user.survey_result.split(",")
+  survey_result_self_array = user.survey_result_self.split(",")
+  
+  (0.. survey_result_array.length-1).each do |index|
+    tmp1 = survey_result_array[index].to_i
+    tmp2 = survey_result_self_array[index].to_i
+    if  tmp1 > 0 and tmp2 > 0 
+      wellKnowCharas << index
+    elsif tmp1 > 0 
+      voteKnowCharas << index
+    elsif tmp2 > 0
+      selfKnowCharas << index
+    else
+      unknowCharas << index
+    end
+  end
+%>
+<div>
+<h3 class="my"><%=h xn_user_name user.name %>的性格分析 </h3>
+
+<table >
+<!--<tr>
+  <td></td>
+  <td class="sect"><b>自己知道的</b></td>
+  <td class="sect"><b>自己不知道的</b></td>
+</tr>-->
+<tr>
+<!--  <td class="sect"><b>别人知道的</b></td>-->
+<td class="arena"><b>公开区</b>(本人和朋友都认识到的性格)<br>
+    <%if wellKnowCharas.length == 0%>
+      无
+    <%else%>
+      <% for chara in wellKnowCharas %>
+        <span style="color:#00007F" title="<%=h character_str(chara)%> (<%= survey_result_array[chara] %>人)"><%=h character_str(chara) %>&nbsp;(<%= survey_result_array[chara] %>)</span><br>
+    <% end %>
+    <%end%>
+  </td>
+  <td class="blind"><b>盲目区</b>(本人不知道的性格)<br>
+    <%if voteKnowCharas.length == 0%>
+      无
+    <%else%>
+      <% for chara in voteKnowCharas %>
+        <span style="color:#00007F" title="<%=h character_str(chara)%> (<%= survey_result_array[chara] %>人)"><%=h character_str(chara) %>&nbsp;(<%= survey_result_array[chara] %>)</span><br>
+      <% end %>
+    <%end%>
+  </td>
+</tr>
+<tr>
+<!--  <td class="sect"><b>别人不知道的</b></td>-->
+  <td class="facade"><b>隐秘区</b>(朋友不知道的性格)<br>
+    <%if selfKnowCharas.length == 0%>
+      无
+    <%else%>
+      <% for chara in selfKnowCharas %>
+        <%=h character_str(chara) %><br>
+      <% end %>
+    <%end%>
+  </td>
+  <td class="unknown"><b>未知区</b><br>
+    <% for chara in unknowCharas %>
+      <%=h character_str(chara) %> &nbsp;
+    <% end %>
+  </td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+

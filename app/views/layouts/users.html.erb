@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title><%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'johari' %>
+  <%= javascript_include_tag 'prototype' %>
+
+  
+  <script language="javascript">
+    function validate()
+    {
+    	var items = document.getElementById("content").value.split(",");
+    	if (items.length < 6) { alert("请选择至少5个词语."); return false;}
+    	if (items.length > 7) { alert("选择的词语不能超过6个. (你能点击选中的词语来取消选择.)"); return false; }
+    	return true;
+    }
+    
+    function boxclick(event,n)
+    {
+    	if (event.style.backgroundColor == "rgb(59, 88, 136)" || event.style.backgroundColor == "#3B5888")
+    	{ event.style.backgroundColor = '#eee';
+    	  event.style.color='#000'
+    		document.getElementById("content").value = document.getElementById("content").value.replace(","+n+",",",");
+                    if (document.getElementById("content").value.substring(0,2) == n+",")
+                    { document.getElementById("content").value = document.getElementById("content").value.substring(2); }
+                    if (document.getElementById("content").value.substring(0,3) == n+",")
+                    { document.getElementById("content").value = document.getElementById("content").value.substring(3); }
+                    if (document.getElementById("content").value == ",") { document.getElementById("content").value = ""; }
+    	}
+    	else
+    	{ event.style.backgroundColor = '#3B5888';
+    	  event.style.color='#ffffff'
+    		document.getElementById("content").value = document.getElementById("content").value + n + ",";
+    	}
+    }
+  </script>
+
+</head>
+<body>
+<div class="mycontent">
+  <div class="myheader">
+    <image src="/images/logo.png">
+  </div>
+  <div class="myheaderinfo" id="latestsurvey">
+	<%= render(:partial => "/surveys/latest" ) %>
+	<%if flash[:notice] != nil%>
+		<span style="color: red"><%= flash[:notice] %></span>
+    <%end%>
+  </div>
+  
+  <%= yield  %>
+</div>
+</body>
+</html>

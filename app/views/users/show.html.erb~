@@ -1,0 +1,25 @@
+<p>
+  <b>Name:</b>
+  <%=h @user.name %>
+</p>
+
+<p>
+  <b>Profile:</b>
+  <%=h @user.profile_id %>
+</p>
+
+<p>
+  <b>Survey_result:</b>
+  <%=h @user.survey_result %>
+</p>
+
+<p>
+  <b>Survey_result_self:</b>
+  <%=h @user.survey_result_self %>
+</p>
+
+<%= render(:partial => "surveys/list" ) %>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+<%= link_to '我来评论', new_user_survey_path(@user) %>

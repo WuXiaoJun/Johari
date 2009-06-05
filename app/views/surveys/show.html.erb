@@ -1,0 +1,23 @@
+<p>
+  <b>User:</b>
+  <%=h @survey.user_id %>
+</p>
+
+<p>
+  <b>Poster:</b>
+  <%=h @survey.poster_id %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%=h @survey.content_str %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%=h @survey.created_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_survey_path(@survey) %> |
+<%= link_to 'Back', surveys_path %>

@@ -1,0 +1,13 @@
+<div class="mybody_cont">
+	<div class="mybody_left">
+		<%= render(:partial => "surveys/table" ) %>
+		<%= link_to ('发表我的对' + xn_user_name(@user.name) +  '性格的评价', new_user_survey_path(@user), :class=>"button1" ) if  @user.name != @sig_user %>
+		<%= link_to ('返回我的久哈利窗', User.find_by_name(@sig_user), :class=>"button1") if @user.name !=  @sig_user %>
+		<%= link_to ('编辑我的自我评价', edit_user_path(@user), :class=>"button1") if @user.name ==  @sig_user %>
+		<div class="clear"></div>
+		<%= render(:partial => "surveys/list" ) %>
+	</div>
+	<div class="mybody_right">
+		<%= render(:partial => "/users/friends" ) %>
+	</div>
+</div>

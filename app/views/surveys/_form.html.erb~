@@ -1,0 +1,23 @@
+<% 
+  user_id ||= @user.id
+  poster_id ||= 2
+  
+  @survey.user_id = user_id
+  @survey.poster_id = poster_id
+%>
+
+<h3 class="my"><%=h user_id%> 久哈利之窗</h3>
+<p>挑选下面表格中的 5 到 6 个您认为最能形容<%=h user_id%> 性格特征的词语</p>
+
+<table class="boxtable">
+<%=characters_select_box()%>
+</table>
+<% form_for(survey, :html => { :onsubmit => "return validate();" }) do |f| %>
+	<%= f.hidden_field :poster_id  %>
+	<%= f.hidden_field :user_id %>
+	<input id="content" name="content" type="hidden" />
+	<%= f.submit "提交", :class => "input-submit"%>
+<% end %>
+
+
+

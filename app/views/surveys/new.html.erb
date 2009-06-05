@@ -1,0 +1,10 @@
+<div class="mybody_cont">
+	<div class="mybody_left">
+		<%= render(:partial => "form", :locals => { :survey_self => false }  ) %>
+		<%= link_to '返回', @user %>
+	</div>
+	<div class="mybody_right">
+		<%= render(:partial => "/users/friends" ) %>
+	</div>
+</div>
+

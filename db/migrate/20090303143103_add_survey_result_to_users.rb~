@@ -1,0 +1,11 @@
+class AddSurveyResultToUsers < ActiveRecord::Migration
+  def self.up
+    add_column :users, :survey_result, :string
+    add_column :users, :survey_result_self, :string
+  end
+
+  def self.down
+    remove_column :users, :survey_result
+    remove_column :users, :survey_result
+  end
+end

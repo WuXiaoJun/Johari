@@ -1,0 +1,1 @@
+<%= periodically_call_remote(:url =>{:controller=>'surveys', :action=>'latestsurvey'} , :frequency => '20', :update => 'latestsurvey', :success => "new Effect.Highlight('latestsurvey')" )%>

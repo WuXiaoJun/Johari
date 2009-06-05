@@ -1,0 +1,12 @@
+<div class="mybox" >
+<h3 class="my" >我朋友的性格测试</h3>
+<%if @friends == nil || @friends.length == 0%>
+  还没有朋友创建性格测试
+<%else%>
+  <%@friends.each() do |friend|%>
+  <p class="pl" >
+  <%=link_to image_tag(friend[:tinyurl].to_s, :width=>50, :hight=>50) + friend[:name].to_s, votes_url(:owner=>friend[:uid])%></a>
+  </p>
+<%end%>
+<%end%>
+</div>

@@ -1,0 +1,2 @@
+最新:<%= time_ago_in_words @survey.updated_at %>前: <b><%=h xn_user_name(@survey.poster_id) %></b>认为<b><%=h xn_user_name(User.find(@survey.user_id).name)%></b>:
+<%=h @survey.content_str %>

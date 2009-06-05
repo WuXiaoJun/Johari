@@ -1,0 +1,59 @@
+(in D:/private/projects/Johari)
+                     users GET    /users                                   {:action=>"index", :controller=>"users"}
+           formatted_users GET    /users.:format                           {:action=>"index", :controller=>"users"}
+                           POST   /users                                   {:action=>"create", :controller=>"users"}
+                           POST   /users.:format                           {:action=>"create", :controller=>"users"}
+                  new_user GET    /users/new                               {:action=>"new", :controller=>"users"}
+        formatted_new_user GET    /users/new.:format                       {:action=>"new", :controller=>"users"}
+                 edit_user GET    /users/:id/edit                          {:action=>"edit", :controller=>"users"}
+       formatted_edit_user GET    /users/:id/edit.:format                  {:action=>"edit", :controller=>"users"}
+                      user GET    /users/:id                               {:action=>"show", :controller=>"users"}
+            formatted_user GET    /users/:id.:format                       {:action=>"show", :controller=>"users"}
+                           PUT    /users/:id                               {:action=>"update", :controller=>"users"}
+                           PUT    /users/:id.:format                       {:action=>"update", :controller=>"users"}
+                           DELETE /users/:id                               {:action=>"destroy", :controller=>"users"}
+                           DELETE /users/:id.:format                       {:action=>"destroy", :controller=>"users"}
+                   surveys GET    /surveys                                 {:action=>"index", :controller=>"surveys"}
+         formatted_surveys GET    /surveys.:format                         {:action=>"index", :controller=>"surveys"}
+                           POST   /surveys                                 {:action=>"create", :controller=>"surveys"}
+                           POST   /surveys.:format                         {:action=>"create", :controller=>"surveys"}
+                new_survey GET    /surveys/new                             {:action=>"new", :controller=>"surveys"}
+      formatted_new_survey GET    /surveys/new.:format                     {:action=>"new", :controller=>"surveys"}
+               edit_survey GET    /surveys/:id/edit                        {:action=>"edit", :controller=>"surveys"}
+     formatted_edit_survey GET    /surveys/:id/edit.:format                {:action=>"edit", :controller=>"surveys"}
+                    survey GET    /surveys/:id                             {:action=>"show", :controller=>"surveys"}
+          formatted_survey GET    /surveys/:id.:format                     {:action=>"show", :controller=>"surveys"}
+                           PUT    /surveys/:id                             {:action=>"update", :controller=>"surveys"}
+                           PUT    /surveys/:id.:format                     {:action=>"update", :controller=>"surveys"}
+                           DELETE /surveys/:id                             {:action=>"destroy", :controller=>"surveys"}
+                           DELETE /surveys/:id.:format                     {:action=>"destroy", :controller=>"surveys"}
+                           GET    /users                                   {:action=>"index", :controller=>"users"}
+                           GET    /users.:format                           {:action=>"index", :controller=>"users"}
+                           POST   /users                                   {:action=>"create", :controller=>"users"}
+                           POST   /users.:format                           {:action=>"create", :controller=>"users"}
+                           GET    /users/new                               {:action=>"new", :controller=>"users"}
+                           GET    /users/new.:format                       {:action=>"new", :controller=>"users"}
+                           GET    /users/:id/edit                          {:action=>"edit", :controller=>"users"}
+                           GET    /users/:id/edit.:format                  {:action=>"edit", :controller=>"users"}
+                           GET    /users/:id                               {:action=>"show", :controller=>"users"}
+                           GET    /users/:id.:format                       {:action=>"show", :controller=>"users"}
+                           PUT    /users/:id                               {:action=>"update", :controller=>"users"}
+                           PUT    /users/:id.:format                       {:action=>"update", :controller=>"users"}
+                           DELETE /users/:id                               {:action=>"destroy", :controller=>"users"}
+                           DELETE /users/:id.:format                       {:action=>"destroy", :controller=>"users"}
+              user_surveys GET    /users/:user_id/surveys                  {:action=>"index", :controller=>"surveys"}
+    formatted_user_surveys GET    /users/:user_id/surveys.:format          {:action=>"index", :controller=>"surveys"}
+                           POST   /users/:user_id/surveys                  {:action=>"create", :controller=>"surveys"}
+                           POST   /users/:user_id/surveys.:format          {:action=>"create", :controller=>"surveys"}
+           new_user_survey GET    /users/:user_id/surveys/new              {:action=>"new", :controller=>"surveys"}
+ formatted_new_user_survey GET    /users/:user_id/surveys/new.:format      {:action=>"new", :controller=>"surveys"}
+          edit_user_survey GET    /users/:user_id/surveys/:id/edit         {:action=>"edit", :controller=>"surveys"}
+formatted_edit_user_survey GET    /users/:user_id/surveys/:id/edit.:format {:action=>"edit", :controller=>"surveys"}
+               user_survey GET    /users/:user_id/surveys/:id              {:action=>"show", :controller=>"surveys"}
+     formatted_user_survey GET    /users/:user_id/surveys/:id.:format      {:action=>"show", :controller=>"surveys"}
+                           PUT    /users/:user_id/surveys/:id              {:action=>"update", :controller=>"surveys"}
+                           PUT    /users/:user_id/surveys/:id.:format      {:action=>"update", :controller=>"surveys"}
+                           DELETE /users/:user_id/surveys/:id              {:action=>"destroy", :controller=>"surveys"}
+                           DELETE /users/:user_id/surveys/:id.:format      {:action=>"destroy", :controller=>"surveys"}
+                                  /:controller/:action/:id                 
+                                  /:controller/:action/:id.:format         
